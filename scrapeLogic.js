@@ -23,18 +23,29 @@ const scrapeLogic = async (res) => {
     await page.setViewport({ width: 1080, height: 1024 });
 
     // Type into search box
-    await page.type(".search-box__input", "automate beyond recorder");
+    //await page.type(".search-box__input", "automate beyond recorder");
 
     // Wait and click on first result
-    const searchResultSelector = ".search-box__link";
-    await page.waitForSelector(searchResultSelector);
-    await page.click(searchResultSelector);
+    //const searchResultSelector = ".search-box__link";
+    //await page.waitForSelector(searchResultSelector);
+    //await page.click(searchResultSelector);
 
     // Locate the full title with a unique string
-    const textSelector = await page.waitForSelector(
-      "text/Customize and automate"
-    );
-    const fullTitle = await textSelector.evaluate((el) => el.textContent);
+    //const textSelector = await page.waitForSelector(
+      //"text/Customize and automate"
+   // );
+    // Wait for JSON data to be available in the page content
+    await page.waitForFunction(() => {
+      return document.body.textContent.includes('{"'); // Adjust if JSON structure is different
+    });
+
+    const jsonText = await page.evaluate(() => {
+      return document.body.textContent;
+    });
+
+    const fullTitle = JSON.parse(jsonText);
+    
+    //const fullTitle = await textSelector.evaluate((el) => el.textContent);
 
     // Print the full title
     const logStatement = `The title of this blog post is ${fullTitle}`;
