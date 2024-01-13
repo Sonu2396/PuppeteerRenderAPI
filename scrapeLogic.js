@@ -17,7 +17,7 @@ const scrapeLogic = async (res) => {
   try {
     const page = await browser.newPage();
 
-    await page.goto("https://developer.chrome.com/");
+    await page.goto("https://api.investing.com/api/financialdata/17950/historical/chart?period=MAX&interval=PT1M&pointscount=160");
 
     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
