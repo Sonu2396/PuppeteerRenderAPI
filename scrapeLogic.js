@@ -35,9 +35,9 @@ const scrapeLogic = async (res) => {
       //"text/Customize and automate"
    // );
     // Wait for JSON data to be available in the page content
-    await page.waitForFunction(() => {
-      return document.body.textContent.includes('data'); // Adjust if JSON structure is different
-    });
+    //await page.waitForFunction(() => {
+     // return document.body.textContent.includes('data'); // Adjust if JSON structure is different
+    //});
 
     const jsonText = await page.evaluate(() => {
       return document.body.textContent;
