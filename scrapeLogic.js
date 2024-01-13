@@ -39,11 +39,11 @@ const scrapeLogic = async (res) => {
      // return document.body.textContent.includes('data'); // Adjust if JSON structure is different
     //});
 
-    const jsonText = await page.evaluate(() => {
+    const fullTitle = await page.evaluate(() => {
       return document.body.textContent;
     });
 
-    const fullTitle = JSON.parse(jsonText);
+    //const fullTitle = JSON.parse(jsonText);
     
     //const fullTitle = await textSelector.evaluate((el) => el.textContent);
 
