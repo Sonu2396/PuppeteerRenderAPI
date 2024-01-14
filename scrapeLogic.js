@@ -17,7 +17,7 @@ const scrapeLogic = async (res) => {
   });
   try {
     const page = await browser.newPage();
-
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0')
     await page.goto("https://api.investing.com/api/financialdata/17950/historical/chart?period=MAX&interval=PT1M&pointscount=160");
 
     // Set screen size
