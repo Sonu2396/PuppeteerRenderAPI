@@ -49,7 +49,7 @@ const scrapeLogic = async (res) => {
     //const fullTitle = await textSelector.evaluate((el) => el.textContent);
 
     // Print the full title
-    const logStatement = `The title of this blog post is ${fullTitle}`;
+    const logStatement = `${fullTitle}`;
     console.log(logStatement);
     res.send(logStatement);
   } catch (e) {
