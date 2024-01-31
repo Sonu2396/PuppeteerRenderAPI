@@ -10,6 +10,7 @@ const scrapeLogic = async (res) => {
       "--single-process",
       "--no-zygote",
       "--incognito",
+      "--lang=en-US,en;q=0.9",
     ],
     executablePath:
       process.env.NODE_ENV === "production"
