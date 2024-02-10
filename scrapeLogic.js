@@ -27,11 +27,17 @@ const scrapeLogic = async (res) => {
     await page.goto("https://api.investing.com/api/financialdata/17950/historical/chart?period=MAX&interval=PT5M&pointscount=160", {
     waitUntil: "domcontentloaded",
   });
-
     
-    await page.waitForTimeout(35000);
-    // Set screen size
+     // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
+    //await page.waitForSelector('#myId').then(() => console.log('got it'));
+    await page.waitForFunction(() => {
+        const content = document.body.textContent; // Adjust based on where data appears
+        return content.includes('{"data":[');
+    }, { timeout: 35000 }); // Set an appropriate timeout
+    //await page.waitForTimeout(35000);
+   
+    
 
     // Type into search box
     //await page.type(".search-box__input", "automate beyond recorder");
