@@ -34,7 +34,7 @@ const scrapeLogic = async (res) => {
     await page.waitForFunction(() => {
         const content = document.body.textContent; // Adjust based on where data appears
         return content.includes('{"data":[');
-    }, { timeout: 65000 }); // Set an appropriate timeout
+    }, { timeout: 265000 }); // Set an appropriate timeout
     //await page.waitForTimeout(35000);
    
     
