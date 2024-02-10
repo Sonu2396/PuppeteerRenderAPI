@@ -31,11 +31,11 @@ const scrapeLogic = async (res) => {
      // Set screen size
     await page.setViewport({ width: 1080, height: 1024 });
     //await page.waitForSelector('#myId').then(() => console.log('got it'));
-    await page.waitForFunction(() => {
-        const content = document.body.textContent; // Adjust based on where data appears
-        return content.includes('{"data":[');
-    }, { timeout: 265000 }); // Set an appropriate timeout
-    //await page.waitForTimeout(35000);
+     // await page.waitForFunction(() => {
+      //    const content = document.body.textContent; // Adjust based on where data appears
+      //    return content.includes('{"data":[');
+     // }, { timeout: 265000 }); // Set an appropriate timeout
+    await page.waitForTimeout(45000);
    
     
 
