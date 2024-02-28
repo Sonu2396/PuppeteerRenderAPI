@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 require("dotenv").config();
 
-const scrapeLogic = async (res) => {
+const scrapeLogic = async (res, Ctimestamp, Ltimestamp) => {
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: null,
