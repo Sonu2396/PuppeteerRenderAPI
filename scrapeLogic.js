@@ -21,8 +21,15 @@ const scrapeLogic = async (res) => {
   });
   try {
 
-    const param1 = 1709099367994;
-    const param2 = 1707371387994;
+    const now = new Date();
+
+    // Convert the datetime to a Unix timestamp
+    const param1 = Math.floor(now.getTime());
+
+    const param2 = Ctimestamp - 1727980000;
+    
+    //const param1 = 1709099367994;
+    //const param2 = 1707371387994;
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0')
     //await page.goto("https://api.investing.com/api/financialdata/17950/historical/chart?period=MAX&interval=PT5M&pointscount=160");
