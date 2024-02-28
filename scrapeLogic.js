@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 require("dotenv").config();
 
-const scrapeLogic = async (res, Ctimestamp, Ltimestamp) => {
+const scrapeLogic = async (res, param1, param2) => {
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: null,
@@ -39,7 +39,7 @@ const scrapeLogic = async (res, Ctimestamp, Ltimestamp) => {
 
     //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=1702146580000&intervalInMinutes=5&startTimeInMillis=1700418600000", {
 
-    await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=${Ctimestamp}&intervalInMinutes=5&startTimeInMillis=${Ltimestamp}", {
+    await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=${param1}&intervalInMinutes=5&startTimeInMillis=${param2}", {
        
     waitUntil: "domcontentloaded",
   });
