@@ -20,14 +20,27 @@ const scrapeLogic = async (res) => {
         : puppeteer.executablePath(),
   });
   try {
+
+    // Get the current datetime
+    const now = new Date();
+
+    // Convert the datetime to a Unix timestamp
+    const Ctimestamp = Math.floor(now.getTime());
+
+    const Ltimestamp = Ctimestamp - 1727980000;
+
+    // Print the timestamp
+    console.log(timestamp);
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0')
     //await page.goto("https://api.investing.com/api/financialdata/17950/historical/chart?period=MAX&interval=PT5M&pointscount=160");
 
     //await page.goto("https://api.investing.com/api/financialdata/17950/historical/chart?period=MAX&interval=PT5M&pointscount=160", {
 
-    await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=1702146580000&intervalInMinutes=5&startTimeInMillis=1700418600000", {
-      
+    //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=1702146580000&intervalInMinutes=5&startTimeInMillis=1700418600000", {
+
+    await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=${Ctimestamp}&intervalInMinutes=5&startTimeInMillis=${Ltimestamp}", {
+       
     waitUntil: "domcontentloaded",
   });
     
