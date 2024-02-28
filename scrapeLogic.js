@@ -26,7 +26,7 @@ const scrapeLogic = async (res) => {
     // Convert the datetime to a Unix timestamp
     const param1 = Math.floor(now.getTime());
 
-    const param2 = Ctimestamp - 1727980000;
+    const param2 = param1 - 1727980000;
     
     //const param1 = 1709099367994;
     //const param2 = 1707371387994;
