@@ -15,12 +15,15 @@ app.use(function (req, res, next) {
 const PORT = process.env.PORT || 4000;
 
 app.get("/scrape", (req, res) => {
-
   const param1 = req.query.param1;
-  const param2 = req.query.param2;
-    
+  const param2 = req.query.param2;    
   scrapeLogic(res,param1, param2);
 });
+
+
+//app.get("/scrape", (req, res) => {
+//  scrapeLogic(res);
+//});
 
 app.get("/", (req, res) => {
   res.send("Render Puppeteer server is up and running!");
