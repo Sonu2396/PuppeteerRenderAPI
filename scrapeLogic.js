@@ -30,7 +30,7 @@ const scrapeLogic = async (res) => {
     const Ltimestamp = Ctimestamp - 1727980000;
 
     // Print the timestamp
-    console.log(timestamp);
+    //console.log(timestamp);
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0')
     //await page.goto("https://api.investing.com/api/financialdata/17950/historical/chart?period=MAX&interval=PT5M&pointscount=160");
