@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 require("dotenv").config();
 
-const niftysSrapeLogic = async (res) => {
+const niftyScrapeLogic = async (res) => {
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: null,
