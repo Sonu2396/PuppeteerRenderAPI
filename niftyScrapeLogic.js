@@ -37,7 +37,7 @@ const niftyScrapeLogic = async (res) => {
     //await page.goto("https://api.investing.com/api/financialdata/17950/historical/chart?period=MAX&interval=PT5M&pointscount=160", {
 
     //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=1702146580000&intervalInMinutes=5&startTimeInMillis=1700418600000", {
-    const url = `https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=${param1}&intervalInMinutes=5&startTimeInMillis=${param2}`;
+    const url = `https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/NIFTY?endTimeInMillis=${param1}&intervalInMinutes=5&startTimeInMillis=${param2}`;
 
     //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/NIFTY?endTimeInMillis=${param1.toString()}&intervalInMinutes=5&startTimeInMillis=${param2.toString()}", {
      await page.goto(url ,  {
