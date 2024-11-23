@@ -39,7 +39,7 @@ const crudeScrapeLogic = async (res) => {
 
     //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=1702146580000&intervalInMinutes=5&startTimeInMillis=1700418600000", {
     //const url = `https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/NIFTY?endTimeInMillis=${param1}&intervalInMinutes=5&startTimeInMillis=${param2}`;
-const url = `https://api.investing.com/api/financialdata/8849/historical/chart/?interval=PT15M&pointscount=160`;
+const url = `https://priceapi.moneycontrol.com/globaltechCharts/usMarket/index/history?symbol=CL1%3ACOM&resolution=5&from=1727434200&to=1727447100&countback=43&currencyCode=USD`;
     //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/NIFTY?endTimeInMillis=${param1.toString()}&intervalInMinutes=5&startTimeInMillis=${param2.toString()}", {
      await page.goto(url ,  {
     waitUntil: "domcontentloaded",
