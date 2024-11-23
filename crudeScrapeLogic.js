@@ -93,4 +93,4 @@ const url = `https://api.investing.com/api/financialdata/8849/historical/chart/?
   }
 };
 
-module.exports = { niftyScrapeLogic };
+module.exports = { crudeScrapeLogic };
