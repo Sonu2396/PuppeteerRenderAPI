@@ -29,6 +29,11 @@ app.get("/nscrape", (req, res) => {
   niftyScrapeLogic(res);
 });
 
+app.get("/cscrape", (req, res) => {
+  //const param1 = req.query.param1;
+  //const param2 = req.query.param2;    
+  crudeScrapeLogic(res);
+});
 
 //app.get("/scrape", (req, res) => {
 //  scrapeLogic(res);
