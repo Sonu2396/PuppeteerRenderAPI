@@ -2,7 +2,7 @@ const express = require("express");
 
 const { scrapeLogic } = require("./scrapeLogic");
 const { niftyScrapeLogic } = require("./niftyScrapeLogic");
-
+const { crudeScrapeLogic } = require("./crudeScrapeLogic");
 const app = express();
 
 // Enable CORS
