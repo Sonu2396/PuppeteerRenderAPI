@@ -27,7 +27,9 @@ const crudeScrapeLogic = async (res) => {
     // Convert the datetime to a Unix timestamp
     const param1 = Math.floor(now.getTime());
 
-    const param2 = param1 - 1727980000;
+    //const param2 = param1 - 1727980000;
+
+    const param2 = param1 - 28020600;
     
     //const param1 = 1709099367994;
     //const param2 = 1707371387994;
@@ -39,8 +41,11 @@ const crudeScrapeLogic = async (res) => {
 
     //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/BANKNIFTY?endTimeInMillis=1702146580000&intervalInMinutes=5&startTimeInMillis=1700418600000", {
     //const url = `https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/NIFTY?endTimeInMillis=${param1}&intervalInMinutes=5&startTimeInMillis=${param2}`;
-const url = `https://priceapi.moneycontrol.com/globaltechCharts/usMarket/index/history?symbol=CL1%3ACOM&resolution=5&from=1727434200&to=1727447100&countback=43&currencyCode=USD`;
-    //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/NIFTY?endTimeInMillis=${param1.toString()}&intervalInMinutes=5&startTimeInMillis=${param2.toString()}", {
+//const url = `https://priceapi.moneycontrol.com/globaltechCharts/usMarket/index/history?symbol=CL1%3ACOM&resolution=5&from=1727434200&to=1727447100&countback=43&currencyCode=USD`;
+
+const url = `https://priceapi.moneycontrol.com/globaltechCharts/usMarket/index/history?symbol=CL1%3ACOM&resolution=5&from=${param1.toString()}&to=${param1.toString()}&countback=999999999&currencyCode=USD`;
+    
+    //await page.goto("https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/NIFTY?endTimeInMillis=${param1.toString()}&intervalInMinutes=5&startTimeInMillis=c", {
      await page.goto(url ,  {
     waitUntil: "domcontentloaded",
   });
